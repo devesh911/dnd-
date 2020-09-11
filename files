@@ -1,0 +1,43 @@
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+
+b = int(input("1 for log 2 for retrieve"))
+a = int(input("1 for exercise 2 for food\n"))
+
+if b==1:
+    if a==1:
+        e = input("enter your name here\n")
+        with open(e+"_exercise"+".txt","a") as op:
+            # in next line we use a empty list to store some values and than passed into op.write
+            exe = []
+            n = int(input("no of exercises you did"))
+            for i in range(1,n+1):
+                exe.append(input("Exercise"+str(i)+":" ))
+            for x in exe:
+                op.write(str(getdate())+":"+x+"\n")
+            print("logged succesfully")
+    elif a==2:
+        e = input("enter your name here\n")
+        with open(e+"_food"+".txt","a") as op:
+            value  = input("Enter food w")
+            # used f string in next line syntax:f"string strinng {mathmatics value,number ,etc}"
+            op.write(f"{getdate()}:{value}\n")
+            print("logged succesfully")
+
+elif b==2:
+    if a==1:
+        e = input("enter your name\n")
+        with open(e+"_exercise"+".txt") as op:
+            print(op.read())
+    elif a==2:
+        e = input("enter your name\n")
+        with open(e+"_fonod"+".txt") as op:
+            print(op.read())
+
+
+
+
+
+
+
